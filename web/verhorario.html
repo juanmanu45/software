@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>Ver Horario</title>
+        <!-- Favicon-->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap Core Css -->
+        <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Waves Effect Css -->
+        <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+        <!-- Animation Css -->
+        <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+        <!-- Morris Chart Css-->
+        <link href="plugins/morrisjs/morris.css" rel="stylesheet" />
+
+        <!-- Custom Css -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+        <link href="css/themes/all-themes.css" rel="stylesheet" />
+    </head>
+
+    <body class="theme-light-green">
+        <!-- Page Loader -->
+        <div class="page-loader-wrapper">
+            <div class="loader">
+                <div class="preloader">
+                    <div class="spinner-layer pl-green">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <p>Por favor espere...</p>
+            </div>
+        </div>
+        <!-- #END# Page Loader -->
+        <!-- Overlay For Sidebars -->
+        <div class="overlay"></div>
+        <!-- #END# Overlay For Sidebars -->
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="search-icon">
+                <i class="material-icons">search</i>
+            </div>
+            <input type="text" placeholder="START TYPING...">
+            <div class="close-search">
+                <i class="material-icons">close</i>
+            </div>
+        </div>
+        <!-- #END# Search Bar -->
+        <!-- Top Bar -->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                    <a href="javascript:void(0);" class="bars"></a>
+                    <a class="navbar-brand" href="index.html">Administrador de Tiempo para Estudiantes</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Call Search 
+                        <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                        #END# Call Search -->
+
+                        <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- #Top Bar -->
+        <section>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                <!-- User Info -->
+                <div class="user-info">
+                    <div class="image">
+                        <img src="images/user.png" width="48" height="48" alt="User" />
+                    </div>
+                    <div class="info-container">
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estudiante</div>
+                        <div class="email">estudiante@estudiante.com</div>
+                        <div class="btn-group user-helper-dropdown">
+                            <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);"><i class="material-icons">person</i>Perfil</a></li>
+                                <li role="seperator" class="divider"></li>
+                                <li><a href="javascript:void(0);"><i class="material-icons">input</i>Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #User Info -->
+                <!-- Menu -->
+                <div class="menu">
+                    <ul class="list">
+
+                        <li>
+                            <a href="index.html">
+                                <i class="material-icons">home</i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="agregarhorario.html">
+                                <i class="material-icons">schedule</i>
+                                <span>Agregar Horario</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="verhorario.html">
+                                <i class="material-icons">view_column</i>
+                                <span>Ver Horario</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="horaslibres.html">
+                                <i class="material-icons">view_day</i>
+                                <span>Horas Libres</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- #Menu -->
+                <!-- Footer -->
+                <div class="legal">
+                    <div class="copyright">
+                        &copy; 2018 <a href="javascript:void(0);">ATE</a>.
+                    </div>
+                    <div class="version">
+                        <b>Version: </b> 0.0.1
+                    </div>
+                </div>
+                <!-- #Footer -->
+            </aside>
+            <!-- #END# Left Sidebar -->
+            <!-- Right Sidebar -->
+            <aside id="rightsidebar" class="right-sidebar">
+                <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                    <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+                    <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+                        <ul class="demo-choose-skin">
+                            <li data-theme="red" class="active">
+                                <div class="red"></div>
+                                <span>Red</span>
+                            </li>
+                            <li data-theme="pink">
+                                <div class="pink"></div>
+                                <span>Pink</span>
+                            </li>
+                            <li data-theme="purple">
+                                <div class="purple"></div>
+                                <span>Purple</span>
+                            </li>
+                            <li data-theme="deep-purple">
+                                <div class="deep-purple"></div>
+                                <span>Deep Purple</span>
+                            </li>
+                            <li data-theme="indigo">
+                                <div class="indigo"></div>
+                                <span>Indigo</span>
+                            </li>
+                            <li data-theme="blue">
+                                <div class="blue"></div>
+                                <span>Blue</span>
+                            </li>
+                            <li data-theme="light-blue">
+                                <div class="light-blue"></div>
+                                <span>Light Blue</span>
+                            </li>
+                            <li data-theme="cyan">
+                                <div class="cyan"></div>
+                                <span>Cyan</span>
+                            </li>
+                            <li data-theme="teal">
+                                <div class="teal"></div>
+                                <span>Teal</span>
+                            </li>
+                            <li data-theme="green">
+                                <div class="green"></div>
+                                <span>Green</span>
+                            </li>
+                            <li data-theme="light-green">
+                                <div class="light-green"></div>
+                                <span>Light Green</span>
+                            </li>
+                            <li data-theme="lime">
+                                <div class="lime"></div>
+                                <span>Lime</span>
+                            </li>
+                            <li data-theme="yellow">
+                                <div class="yellow"></div>
+                                <span>Yellow</span>
+                            </li>
+                            <li data-theme="amber">
+                                <div class="amber"></div>
+                                <span>Amber</span>
+                            </li>
+                            <li data-theme="orange">
+                                <div class="orange"></div>
+                                <span>Orange</span>
+                            </li>
+                            <li data-theme="deep-orange">
+                                <div class="deep-orange"></div>
+                                <span>Deep Orange</span>
+                            </li>
+                            <li data-theme="brown">
+                                <div class="brown"></div>
+                                <span>Brown</span>
+                            </li>
+                            <li data-theme="grey">
+                                <div class="grey"></div>
+                                <span>Grey</span>
+                            </li>
+                            <li data-theme="blue-grey">
+                                <div class="blue-grey"></div>
+                                <span>Blue Grey</span>
+                            </li>
+                            <li data-theme="black">
+                                <div class="black"></div>
+                                <span>Black</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="settings">
+                        <div class="demo-settings">
+                            <p>GENERAL SETTINGS</p>
+                            <ul class="setting-list">
+                                <li>
+                                    <span>Report Panel Usage</span>
+                                    <div class="switch">
+                                        <label><input type="checkbox" checked><span class="lever"></span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Email Redirect</span>
+                                    <div class="switch">
+                                        <label><input type="checkbox"><span class="lever"></span></label>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p>SYSTEM SETTINGS</p>
+                            <ul class="setting-list">
+                                <li>
+                                    <span>Notifications</span>
+                                    <div class="switch">
+                                        <label><input type="checkbox" checked><span class="lever"></span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Auto Updates</span>
+                                    <div class="switch">
+                                        <label><input type="checkbox" checked><span class="lever"></span></label>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p>ACCOUNT SETTINGS</p>
+                            <ul class="setting-list">
+                                <li>
+                                    <span>Offline</span>
+                                    <div class="switch">
+                                        <label><input type="checkbox"><span class="lever"></span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>Location Permission</span>
+                                    <div class="switch">
+                                        <label><input type="checkbox" checked><span class="lever"></span></label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- #END# Right Sidebar -->
+        </section>
+
+        <section class="content">
+            <div class="container-fluid">
+                <div class="block-header">
+                    <h2>VER HORARIO</h2>
+                </div>
+
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="header">
+                                <div class="row clearfix">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <h2>VER HORARIO</h2>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="body">                                
+                                <form action="/">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Hora</th>
+                                                <th>Dom</th>
+                                                <th>Lun</th> 
+                                                <th>Mar</th>
+                                                <th>Mié</th>
+                                                <th>Jue</th>
+                                                <th>Vie</th>
+                                                <th>Sáb</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>6 a.m.</td>
+                                                <td class="success"><input type="checkbox" id="dom6" name="dom6" class="filled-in chk-col-green"><label for="dom6">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun6" name="lun6" class="filled-in chk-col-green"><label for="lun6">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar6" name="mar6" class="filled-in chk-col-green"><label for="mar6">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie6" name="mie6" class="filled-in chk-col-green"><label for="mie6">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue6" name="jue6" class="filled-in chk-col-green"><label for="jue6">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie6" name="vie6" class="filled-in chk-col-green"><label for="vie6">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab6" name="sab6" class="filled-in chk-col-green"><label for="sab6">&nbsp;</label></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>7 a.m.</td>
+                                                <td><input type="checkbox" id="dom7" name="dom7" class="filled-in chk-col-green"><label for="dom7">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun7" name="lun7" class="filled-in chk-col-green"><label for="lun7">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar7" name="mar7" class="filled-in chk-col-green"><label for="mar7">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie7" name="mie7" class="filled-in chk-col-green"><label for="mie7">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue7" name="jue7" class="filled-in chk-col-green"><label for="jue7">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie7" name="vie7" class="filled-in chk-col-green"><label for="vie7">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab7" name="sab7" class="filled-in chk-col-green"><label for="sab7">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8 a.m.</td>
+                                                <td><input type="checkbox" id="dom8" name="dom8" class="filled-in chk-col-green"><label for="dom8">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun8" name="lun8" class="filled-in chk-col-green"><label for="lun8">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar8" name="mar8" class="filled-in chk-col-green"><label for="mar8">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie8" name="mie8" class="filled-in chk-col-green"><label for="mie8">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue8" name="jue8" class="filled-in chk-col-green"><label for="jue8">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie8" name="vie8" class="filled-in chk-col-green"><label for="vie8">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab8" name="sab8" class="filled-in chk-col-green"><label for="sab8">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9 a.m.</td>
+                                                <td><input type="checkbox" id="dom9" name="dom9" class="filled-in chk-col-green"><label for="dom9">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun9" name="lun9" class="filled-in chk-col-green"><label for="lun9">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar9" name="mar9" class="filled-in chk-col-green"><label for="mar9">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie9" name="mie9" class="filled-in chk-col-green"><label for="mie9">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue9" name="jue9" class="filled-in chk-col-green"><label for="jue9">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie9" name="vie9" class="filled-in chk-col-green"><label for="vie9">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab9" name="sab9" class="filled-in chk-col-green"><label for="sab9">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10 a.m.</td>
+                                                <td><input type="checkbox" id="dom10" name="dom10" class="filled-in chk-col-green"><label for="dom10">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun10" name="lun10" class="filled-in chk-col-green"><label for="lun10">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar10" name="mar10" class="filled-in chk-col-green"><label for="mar10">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie10" name="mie10" class="filled-in chk-col-green"><label for="mie10">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue10" name="jue10" class="filled-in chk-col-green"><label for="jue10">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie10" name="vie10" class="filled-in chk-col-green"><label for="vie10">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab10" name="sab10" class="filled-in chk-col-green"><label for="sab10">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>11 a.m.</td>
+                                                <td><input type="checkbox" id="dom11" name="dom11" class="filled-in chk-col-green"><label for="dom11">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun11" name="lun11" class="filled-in chk-col-green"><label for="lun11">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar11" name="mar11" class="filled-in chk-col-green"><label for="mar11">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie11" name="mie11" class="filled-in chk-col-green"><label for="mie11">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue11" name="jue11" class="filled-in chk-col-green"><label for="jue11">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie11" name="vie11" class="filled-in chk-col-green"><label for="vie11">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab11" name="sab11" class="filled-in chk-col-green"><label for="sab11">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>12 a.m.</td>
+                                                <td><input type="checkbox" id="dom12" name="dom12" class="filled-in chk-col-green"><label for="dom12">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun12" name="lun12" class="filled-in chk-col-green"><label for="lun12">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar12" name="mar12" class="filled-in chk-col-green"><label for="mar12">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie12" name="mie12" class="filled-in chk-col-green"><label for="mie12">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue12" name="jue12" class="filled-in chk-col-green"><label for="jue12">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie12" name="vie12" class="filled-in chk-col-green"><label for="vie12">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab12" name="sab12" class="filled-in chk-col-green"><label for="sab12">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>1 p.m.</td>
+                                                <td><input type="checkbox" id="dom13" name="dom13" class="filled-in chk-col-green"><label for="dom13">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun13" name="lun13" class="filled-in chk-col-green"><label for="lun13">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar13" name="mar13" class="filled-in chk-col-green"><label for="mar13">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie13" name="mie13" class="filled-in chk-col-green"><label for="mie13">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue13" name="jue13" class="filled-in chk-col-green"><label for="jue13">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie13" name="vie13" class="filled-in chk-col-green"><label for="vie13">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab13" name="sab13" class="filled-in chk-col-green"><label for="sab13">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2 p.m.</td>
+                                                <td><input type="checkbox" id="dom14" name="dom14" class="filled-in chk-col-green"><label for="dom14">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun14" name="lun14" class="filled-in chk-col-green"><label for="lun14">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar14" name="mar14" class="filled-in chk-col-green"><label for="mar14">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie14" name="mie14" class="filled-in chk-col-green"><label for="mie14">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue14" name="jue14" class="filled-in chk-col-green"><label for="jue14">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie14" name="vie14" class="filled-in chk-col-green"><label for="vie14">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab14" name="sab14" class="filled-in chk-col-green"><label for="sab14">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3 p.m.</td>
+                                                <td><input type="checkbox" id="dom15" name="dom15" class="filled-in chk-col-green"><label for="dom15">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun15" name="lun15" class="filled-in chk-col-green"><label for="lun15">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar15" name="mar15" class="filled-in chk-col-green"><label for="mar15">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie15" name="mie15" class="filled-in chk-col-green"><label for="mie15">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue15" name="jue15" class="filled-in chk-col-green"><label for="jue15">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie15" name="vie15" class="filled-in chk-col-green"><label for="vie15">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab15" name="sab15" class="filled-in chk-col-green"><label for="sab15">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4 p.m.</td>
+                                                <td><input type="checkbox" id="dom16" name="dom16" class="filled-in chk-col-green"><label for="dom16">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun16" name="lun16" class="filled-in chk-col-green"><label for="lun16">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar16" name="mar16" class="filled-in chk-col-green"><label for="mar16">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie16" name="mie16" class="filled-in chk-col-green"><label for="mie16">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue16" name="jue16" class="filled-in chk-col-green"><label for="jue16">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie16" name="vie16" class="filled-in chk-col-green"><label for="vie16">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab16" name="sab16" class="filled-in chk-col-green"><label for="sab16">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5 p.m.</td>
+                                                <td><input type="checkbox" id="dom17" name="dom17" class="filled-in chk-col-green"><label for="dom17">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun17" name="lun17" class="filled-in chk-col-green"><label for="lun17">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar17" name="mar17" class="filled-in chk-col-green"><label for="mar17">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie17" name="mie17" class="filled-in chk-col-green"><label for="mie17">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue17" name="jue17" class="filled-in chk-col-green"><label for="jue17">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie17" name="vie17" class="filled-in chk-col-green"><label for="vie17">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab17" name="sab17" class="filled-in chk-col-green"><label for="sab17">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6 p.m.</td>
+                                                <td><input type="checkbox" id="dom18" name="dom18" class="filled-in chk-col-green"><label for="dom18">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun18" name="lun18" class="filled-in chk-col-green"><label for="lun18">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar18" name="mar18" class="filled-in chk-col-green"><label for="mar18">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie18" name="mie18" class="filled-in chk-col-green"><label for="mie18">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue18" name="jue18" class="filled-in chk-col-green"><label for="jue18">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie18" name="vie18" class="filled-in chk-col-green"><label for="vie18">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab18" name="sab18" class="filled-in chk-col-green"><label for="sab18">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7 p.m.</td>
+                                                <td><input type="checkbox" id="dom19" name="dom19" class="filled-in chk-col-green"><label for="dom19">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun19" name="lun19" class="filled-in chk-col-green"><label for="lun19">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar19" name="mar19" class="filled-in chk-col-green"><label for="mar19">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie19" name="mie19" class="filled-in chk-col-green"><label for="mie19">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue19" name="jue19" class="filled-in chk-col-green"><label for="jue19">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie19" name="vie19" class="filled-in chk-col-green"><label for="vie19">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab19" name="sab19" class="filled-in chk-col-green"><label for="sab19">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8 p.m.</td>
+                                                <td><input type="checkbox" id="dom20" name="dom20" class="filled-in chk-col-green"><label for="dom20">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun20" name="lun20" class="filled-in chk-col-green"><label for="lun20">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar20" name="mar20" class="filled-in chk-col-green"><label for="mar20">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie20" name="mie20" class="filled-in chk-col-green"><label for="mie20">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue20" name="jue20" class="filled-in chk-col-green"><label for="jue20">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie20" name="vie20" class="filled-in chk-col-green"><label for="vie20">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab20" name="sab20" class="filled-in chk-col-green"><label for="sab20">&nbsp;</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9 p.m.</td>
+                                                <td><input type="checkbox" id="dom21" name="dom21" class="filled-in chk-col-green"><label for="dom21">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="lun21" name="lun21" class="filled-in chk-col-green"><label for="lun21">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mar21" name="mar21" class="filled-in chk-col-green"><label for="mar21">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="mie21" name="mie21" class="filled-in chk-col-green"><label for="mie21">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="jue21" name="jue21" class="filled-in chk-col-green"><label for="jue21">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="vie21" name="vie21" class="filled-in chk-col-green"><label for="vie21">&nbsp;</label></td>
+                                                <td><input type="checkbox" id="sab21" name="sab21" class="filled-in chk-col-green"><label for="sab21">&nbsp;</label></td>
+                                            </tr>
+                                        </tbody>
+
+
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jquery Core Js -->
+        <script src="plugins/jquery/jquery.min.js"></script>
+
+        <!-- Bootstrap Core Js -->
+        <script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+        <!-- Select Plugin Js -->
+        <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+        <!-- Slimscroll Plugin Js -->
+        <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+        <!-- Waves Effect Plugin Js -->
+        <script src="plugins/node-waves/waves.js"></script>
+
+        <!-- Jquery CountTo Plugin Js -->
+        <script src="plugins/jquery-countto/jquery.countTo.js"></script>
+
+        <!-- Morris Plugin Js -->
+        <script src="plugins/raphael/raphael.min.js"></script>
+        <script src="plugins/morrisjs/morris.js"></script>
+
+        <!-- ChartJs -->
+        <script src="plugins/chartjs/Chart.bundle.js"></script>
+
+        <!-- Flot Charts Plugin Js -->
+        <script src="plugins/flot-charts/jquery.flot.js"></script>
+        <script src="plugins/flot-charts/jquery.flot.resize.js"></script>
+        <script src="plugins/flot-charts/jquery.flot.pie.js"></script>
+        <script src="plugins/flot-charts/jquery.flot.categories.js"></script>
+        <script src="plugins/flot-charts/jquery.flot.time.js"></script>
+
+        <!-- Sparkline Chart Plugin Js -->
+        <script src="plugins/jquery-sparkline/jquery.sparkline.js"></script>
+
+        <!-- Custom Js -->
+        <script src="js/admin.js"></script>
+        <script src="js/pages/index.js"></script>
+
+        <!-- Demo Js -->
+        <script src="js/demo.js"></script>
+    </body>
+
+</html>

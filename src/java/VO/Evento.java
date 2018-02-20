@@ -20,6 +20,16 @@ public class Evento {
     public Evento() {
     }
 
+    public Evento(int id_evento, int id_persona, String nombre_eve, String dia, int hora_ini, int hora_fin) {
+        this.id_evento = id_evento;
+        this.id_persona = id_persona;
+        this.nombre_eve = nombre_eve;
+        this.dia = dia;
+        this.hora_ini = hora_ini;
+        this.hora_fin = hora_fin;
+    }
+    
+
     public int getId_evento() {
         return id_evento;
     }

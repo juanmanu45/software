@@ -4,9 +4,17 @@
         <servlet-name>ListarPersona</servlet-name>
         <servlet-class>Controladores.ListarPersona</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Ingresar</servlet-name>
+        <servlet-class>Controladores.Ingresar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListarPersona</servlet-name>
         <url-pattern>/ListarPersona</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ingresar</servlet-name>
+        <url-pattern>/Ingresar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
